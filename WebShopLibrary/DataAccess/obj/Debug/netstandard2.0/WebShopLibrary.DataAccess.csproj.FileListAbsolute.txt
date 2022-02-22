@@ -1,0 +1,8 @@
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\bin\Debug\netstandard2.0\WebShopLibrary.DataAccess.deps.json
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\bin\Debug\netstandard2.0\WebShopLibrary.DataAccess.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\bin\Debug\netstandard2.0\WebShopLibrary.DataAccess.pdb
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\obj\Debug\netstandard2.0\WebShopLibrary.DataAccess.csprojAssemblyReference.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\obj\Debug\netstandard2.0\WebShopLibrary.DataAccess.AssemblyInfoInputs.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\obj\Debug\netstandard2.0\WebShopLibrary.DataAccess.AssemblyInfo.cs
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\obj\Debug\netstandard2.0\WebShopLibrary.DataAccess.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\DataAccess\obj\Debug\netstandard2.0\WebShopLibrary.DataAccess.pdb

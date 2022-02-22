@@ -1,0 +1,12 @@
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\bin\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.deps.json
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\bin\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\bin\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.pdb
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.AssemblyInfoInputs.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.AssemblyInfo.cs
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.pdb
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\bin\Debug\netstandard2.0\WebShopLibrary.DataAccess.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\bin\Debug\netstandard2.0\WebShopLibrary.DataAccess.pdb
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.csprojAssemblyReference.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.csproj.CopyComplete
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLogic\obj\Debug\netstandard2.0\WebShopLibrary.BusinessAccess.csproj.CoreCompileInputs.cache

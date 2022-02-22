@@ -1,0 +1,12 @@
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\bin\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.deps.json
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\bin\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\bin\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.pdb
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\bin\Debug\netcoreapp3.1\WebShopLibrary.DataAccessLayer.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\bin\Debug\netcoreapp3.1\WebShopLibrary.DataAccessLayer.pdb
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.csprojAssemblyReference.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.AssemblyInfoInputs.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.AssemblyInfo.cs
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.csproj.CopyComplete
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.dll
+C:\Users\nics\source\repos\WebShopAngularProject\WebShopLibrary\BusinessAccessLayer\obj\Debug\netcoreapp3.1\WebShopLibrary.BusinessAccessLayer.pdb

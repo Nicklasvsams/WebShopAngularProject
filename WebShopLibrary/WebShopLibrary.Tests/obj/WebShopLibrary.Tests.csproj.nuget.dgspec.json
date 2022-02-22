@@ -1,0 +1,298 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebShopLibrary.Tests\\WebShopLibrary.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj",
+        "projectName": "WebShopLibrary.BusinessAccessLayer",
+        "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\nics\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj",
+        "projectName": "WebShopLibrary.DataAccessLayer",
+        "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\nics\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebApi\\WebShopLibrary.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebApi\\WebShopLibrary.WebApi.csproj",
+        "projectName": "WebShopLibrary.WebApi",
+        "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebApi\\WebShopLibrary.WebApi.csproj",
+        "packagesPath": "C:\\Users\\nics\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebShopLibrary.Tests\\WebShopLibrary.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebShopLibrary.Tests\\WebShopLibrary.Tests.csproj",
+        "projectName": "WebShopLibrary.Tests",
+        "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebShopLibrary.Tests\\WebShopLibrary.Tests.csproj",
+        "packagesPath": "C:\\Users\\nics\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebShopLibrary.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nics\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\BusinessAccessLayer\\WebShopLibrary.BusinessAccessLayer.csproj"
+              },
+              "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\DataAccessLayer\\WebShopLibrary.DataAccessLayer.csproj"
+              },
+              "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebApi\\WebShopLibrary.WebApi.csproj": {
+                "projectPath": "C:\\Users\\nics\\source\\repos\\WebShopAngularProject\\WebShopLibrary\\WebApi\\WebShopLibrary.WebApi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
