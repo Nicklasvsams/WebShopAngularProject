@@ -1,0 +1,31 @@
+<h1>User administration</h1>
+
+<div>
+    <div>
+        <label>Username</label>
+        <input [(ngModel)]="user.username">
+    </div>
+    <div>
+        <label>Password</label>
+        <input [(ngModel)]="user.password">
+    </div>
+    <div>
+        <label>Email</label>
+        <input [(ngModel)]="user.email">
+    </div>
+    <div>
+        <label>User Type</label>
+        <input [(ngModel)]="user.userType">
+    </div>
+    <button (click)="save()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+<br>
+<ul *ngIf="users.length > 0">
+    <div class="infoCard" *ngFor="let user of users">
+        <button (click)="edit(user)">Edit</button>
+        <button (click)="delete(user)">Delete</button>
+        <li>Username: {{user.username}} - Password: {{user.password}}, Email: {{user.email}} - Usertype:
+            {{user.userType}}</li>
+    </div>
+</ul>

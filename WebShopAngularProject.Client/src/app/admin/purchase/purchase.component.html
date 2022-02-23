@@ -1,0 +1,46 @@
+<h1>Purchase administration</h1>
+
+<div>
+    <div>
+        <label>Purchase date</label>
+        <input [(ngModel)]="purchase.purchaseDate" type="date">
+    </div>
+    <div>
+        <label>User ID</label>
+        <input [(ngModel)]="purchase.userId" type="number">
+    </div>
+    <div>
+        <label>Product ID</label>
+        <input [(ngModel)]="purchase.productId" type="number">
+    </div>
+    <button (click)="save()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+<br>
+<ul *ngIf="purchases.length > 0">
+    <div class="infoCard" *ngFor="let purchase of purchases">
+        <button (click)="edit(purchase)">Edit</button>
+        <button (click)="delete(purchase)">Delete</button>
+        Purchase ID: {{purchase.id}} - Purchase Date: {{purchase.purchaseDate | date}} <br>
+        <ul *ngIf="purchase.user != null">
+            <li>
+                <h4>User:</h4>
+            </li>
+            <li>Id: {{ purchase.user.id }}</li>
+            <li>Username: {{ purchase.user.username }}</li>
+            <li>Password: {{ purchase.user.password }}</li>
+            <li>Email: {{ purchase.user.email }}</li>
+            <li>User Type: {{ purchase.user.userType }}</li>
+        </ul>
+        <ul *ngIf="purchase.product != null">
+            <li>
+                <h4>Product:</h4>
+            </li>
+            <li>{{ purchase.product.id }}</li>
+            <li>{{ purchase.product.name }}</li>
+            <li>{{ purchase.product.price }}</li>
+            <li>{{ purchase.product.description }}</li>
+            <li>{{ purchase.product.stock }}</li>
+        </ul>
+    </div>
+</ul>
