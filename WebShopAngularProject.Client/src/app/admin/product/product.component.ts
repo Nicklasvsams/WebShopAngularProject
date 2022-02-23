@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
         this.productService.createProduct(this.product)
           .subscribe({
             next: (x) => {
-              this.products.push(this.product);
+              this.products.push(x);
               this.product = this.resetProduct();
             },
             error: (err) => {

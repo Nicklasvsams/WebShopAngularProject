@@ -33,8 +33,8 @@ export class PurchaseComponent implements OnInit {
       if (confirm('Save new purchase?')) {
         this.purchaseService.createPurchase(this.purchase)
           .subscribe({
-            next: () => {
-              this.purchases.push(this.purchase);
+            next: (x) => {
+              this.purchases.push(x);
               this.purchase = this.resetPurchase();
             },
             error: (err) => {
