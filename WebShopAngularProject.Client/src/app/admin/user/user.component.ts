@@ -16,7 +16,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getAllUsers()
-      .subscribe(x => this.users = x);
+      .subscribe({
+        next: (x) => {
+          this.users = x;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
   };
 
   edit(user: User): void {
