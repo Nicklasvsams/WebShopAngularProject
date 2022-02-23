@@ -30,37 +30,41 @@ export class PurchaseComponent implements OnInit {
 
   save(): void {
     if (this.purchase.id == 0) {
-      this.purchaseService.createPurchase(this.purchase)
-        .subscribe({
-          next: () => {
-            this.purchases.push(this.purchase);
-            this.purchase = this.resetPurchase();
-          },
-          error: (err) => {
-            console.log(err)
-          }
-        });
+      if (confirm('Save new purchase?')) {
+        this.purchaseService.createPurchase(this.purchase)
+          .subscribe({
+            next: () => {
+              this.purchases.push(this.purchase);
+              this.purchase = this.resetPurchase();
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          });
+      }
     } else {
-      this.purchaseService.updatePurchase(this.purchase.id, this.purchase)
-        .subscribe({
-          next: () => {
-            this.purchase = this.resetPurchase();
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        })
-    }
+      if (confirm('Update purchase with ID ' + this.purchase.id + '?')) {
+        this.purchaseService.updatePurchase(this.purchase.id, this.purchase)
+          .subscribe({
+            next: () => {
+              this.purchase = this.resetPurchase();
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          });
+      };
+    };
   }
 
   edit(purchase: Purchase): void {
-    if (confirm('Do you want to edit this product?')) {
+    if (confirm('Do you want to edit this purchase?')) {
       this.purchase = purchase;
-    }
-  }
+    };
+  };
 
   delete(purchase: Purchase): void {
-    if (confirm('Do you want to delete this product?')) {
+    if (confirm('Do you want to delete this purchase?')) {
       this.purchaseService.deletePurchase(purchase.id)
         .subscribe({
           next: (x) => {
@@ -69,16 +73,16 @@ export class PurchaseComponent implements OnInit {
           error: (err) => {
             console.log(err);
           }
-        })
-    }
+        });
+    };
   }
 
   cancel(): void {
     this.purchase = this.resetPurchase();
-  }
+  };
 
   resetPurchase(): Purchase {
     var purchase: Purchase = { id: 0, purchaseDate: new Date(), userId: 0, productId: 0 };
     return purchase;
-  }
+  };
 }

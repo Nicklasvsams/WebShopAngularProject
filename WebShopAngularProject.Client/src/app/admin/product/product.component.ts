@@ -7,6 +7,7 @@ import { ProductService } from 'src/app/_services/product.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+
 export class ProductComponent implements OnInit {
   products: Product[] = [];
   product: Product = { id: 0, name: '', price: 0, description: '', stock: 0 };
@@ -21,47 +22,51 @@ export class ProductComponent implements OnInit {
 
   save(): void {
     if (this.product.id == 0) {
-      this.productService.createProduct(this.product)
-        .subscribe({
-          next: (x) => {
-            this.products.push(this.product);
-            this.product = this.resetProduct();
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        })
+      if (confirm('Save new product?')) {
+        this.productService.createProduct(this.product)
+          .subscribe({
+            next: (x) => {
+              this.products.push(this.product);
+              this.product = this.resetProduct();
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          });
+      };
     } else {
-      this.productService.updateProduct(this.product.id, this.product)
-        .subscribe({
-          next: () => {
-            this.product = this.resetProduct();
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        })
+      if (confirm('Update product with ID ' + this.product.id + '?')) {
+        this.productService.updateProduct(this.product.id, this.product)
+          .subscribe({
+            next: () => {
+              this.product = this.resetProduct();
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+      }
     }
   }
 
   edit(product: Product): void {
-    if (confirm('Do you want to edit the product: ' + product.name + ' ?')) {
+    if (confirm('Do you want to edit this product?')) {
       this.product = product;
     }
   }
 
   delete(product: Product): void {
-    if (confirm('Delete ' + product.name + ' ?')) {
+    if (confirm('Do you want to delete this product?')) {
       this.productService.deleteProduct(product.id)
         .subscribe({
           next: (x) => {
-            this.products = this.products.filter(x => x.id != product.id)
+            this.products = this.products.filter(x => x.id != product.id);
           },
           error: (err) => {
             console.log(err);
           }
         });
-    }
+    };
   }
 
   cancel(): void {

@@ -17,14 +17,14 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllUsers()
       .subscribe(x => this.users = x);
-  }
+  };
 
   edit(user: User): void {
     this.user = user;
-  }
+  };
 
   delete(user: User): void {
-    if (confirm('Are you sure you want to delete this entry?')) {
+    if (confirm('Do you want to delete this user?')) {
       this.userService.deleteUser(user.id)
         .subscribe({
           next: () => {
@@ -33,9 +33,9 @@ export class UserComponent implements OnInit {
           error: (err) => {
             console.log(err.error);
           }
-        })
-    }
-  }
+        });
+    };
+  };
 
   save(): void {
     if (this.user.id == 0) {
@@ -52,7 +52,7 @@ export class UserComponent implements OnInit {
           });
       }
     } else {
-      if (confirm('Update ' + this.user.username + '? ID: ' + this.user.id)) {
+      if (confirm('Update ' + this.user.username + '?')) {
         this.userService.updateUser(this.user.id, this.user)
           .subscribe({
             error: (err) => {
@@ -62,16 +62,16 @@ export class UserComponent implements OnInit {
               this.user = this.resetUser();
             }
           });
-      }
-    }
+      };
+    };
   }
 
   cancel(): void {
     this.user = this.resetUser();
-  }
+  };
 
   resetUser(): User {
-    var user: User = { id: 0, username: '', password: '', email: '', userType: '' }
+    var user: User = { id: 0, username: '', password: '', email: '', userType: '' };
     return user;
-  }
+  };
 }
