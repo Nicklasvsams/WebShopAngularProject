@@ -26,35 +26,43 @@ export class UserComponent implements OnInit {
   delete(user: User): void {
     if (confirm('Are you sure you want to delete this entry?')) {
       this.userService.deleteUser(user.id)
-        .subscribe(() => {
-          this.users = this.users.filter(x => x.id != user.id)
+        .subscribe({
+          next: () => {
+            this.users = this.users.filter(x => x.id != user.id)
+          },
+          error: (err) => {
+            console.log(err.error);
+          }
         })
     }
   }
 
   save(): void {
-    console.log(this.user);
     if (this.user.id == 0) {
-      this.userService.addUser(this.user)
-        .subscribe({
-          next: (x) => {
-            this.users.push(x);
-            this.user = this.resetUser();
-          },
-          error: (err) => {
-            console.log(err.error);
-          }
-        });
+      if (confirm('Save new user?')) {
+        this.userService.addUser(this.user)
+          .subscribe({
+            next: (x) => {
+              this.users.push(x);
+              this.user = this.resetUser();
+            },
+            error: (err) => {
+              console.log(err.error);
+            }
+          });
+      }
     } else {
-      this.userService.updateUser(this.user.id, this.user)
-        .subscribe({
-          error: (err) => {
-            console.log(err.error);
-          },
-          complete: () => {
-            this.user = this.resetUser();
-          }
-        })
+      if (confirm('Update ' + this.user.username + '? ID: ' + this.user.id)) {
+        this.userService.updateUser(this.user.id, this.user)
+          .subscribe({
+            error: (err) => {
+              console.log(err.error);
+            },
+            complete: () => {
+              this.user = this.resetUser();
+            }
+          });
+      }
     }
   }
 
