@@ -3,15 +3,15 @@
 <div>
     <div>
         <label>Purchase date</label>
-        <input [(ngModel)]="purchase.purchaseDate">
+        <input [(ngModel)]="purchase.purchaseDate" type="date">
     </div>
     <div>
         <label>User ID</label>
-        <input [(ngModel)]="purchase.userId">
+        <input [(ngModel)]="purchase.userId" type="number">
     </div>
     <div>
         <label>Product ID</label>
-        <input [(ngModel)]="purchase.productId">
+        <input [(ngModel)]="purchase.productId" type="number">
     </div>
     <button (click)="save()">Save</button>
     <button (click)="cancel()">Cancel</button>
@@ -21,7 +21,7 @@
     <div class="infoCard" *ngFor="let purchase of purchases">
         <button (click)="edit(purchase)">Edit</button>
         <button (click)="delete(purchase)">Delete</button>
-        Purchase ID: {{purchase.id}} - Purchase Date: {{purchase.purchaseDate}} <br>
+        Purchase ID: {{purchase.id}} - Purchase Date: {{purchase.purchaseDate | date}} <br>
         <ul *ngIf="purchase.user != null">
             <li>
                 <h4>User:</h4>

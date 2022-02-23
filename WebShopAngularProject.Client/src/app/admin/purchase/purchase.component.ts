@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/_models/product';
 import { Purchase } from 'src/app/_models/purchase';
-import { User } from 'src/app/_models/user';
 import { PurchaseService } from 'src/app/_services/purchase.service';
 import { UserService } from 'src/app/_services/user.service';
 
@@ -12,8 +10,6 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class PurchaseComponent implements OnInit {
   purchases: Purchase[] = [];
-  users: User[] = [];
-  products: Product[] = [];
 
   purchase: Purchase = { id: 0, purchaseDate: new Date(), userId: 0, productId: 0 }
 
@@ -24,25 +20,65 @@ export class PurchaseComponent implements OnInit {
       .subscribe({
         next: (x) => {
           this.purchases = x;
-          console.log(x);
+        },
+        error: (err) => {
+          console.log(err);
         }
       });
 
   }
 
   save(): void {
-
+    if (this.purchase.id == 0) {
+      this.purchaseService.createPurchase(this.purchase)
+        .subscribe({
+          next: () => {
+            this.purchases.push(this.purchase);
+            this.purchase = this.resetPurchase();
+          },
+          error: (err) => {
+            console.log(err)
+          }
+        });
+    } else {
+      this.purchaseService.updatePurchase(this.purchase.id, this.purchase)
+        .subscribe({
+          next: () => {
+            this.purchase = this.resetPurchase();
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        })
+    }
   }
 
   edit(purchase: Purchase): void {
-
+    if (confirm('Do you want to edit this product?')) {
+      this.purchase = purchase;
+    }
   }
 
   delete(purchase: Purchase): void {
-
+    if (confirm('Do you want to delete this product?')) {
+      this.purchaseService.deletePurchase(purchase.id)
+        .subscribe({
+          next: (x) => {
+            this.purchases = this.purchases.filter(x => x.id != purchase.id);
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        })
+    }
   }
 
   cancel(): void {
+    this.purchase = this.resetPurchase();
+  }
 
+  resetPurchase(): Purchase {
+    var purchase: Purchase = { id: 0, purchaseDate: new Date(), userId: 0, productId: 0 };
+    return purchase;
   }
 }
