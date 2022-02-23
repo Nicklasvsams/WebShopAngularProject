@@ -1,1 +1,22 @@
-<p>category works!</p>
+<h1>Category administration</h1>
+
+<div>
+    <div>
+        <label>Category name</label>
+        <input [(ngModel)]="category.name">
+    </div>
+    <div>
+        <label>Description</label>
+        <input [(ngModel)]="category.description">
+    </div>
+    <button (click)="save()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+<br>
+<ul *ngIf="categories.length > 0">
+    <div class="infoCard" *ngFor="let category of categories">
+        <button (click)="edit(category)">Edit</button>
+        <button (click)="delete(category)">Delete</button>
+        Category ID: {{category.id}} - Category name: {{category.name}} - Category description: {{category.description}}
+    </div>
+</ul>
