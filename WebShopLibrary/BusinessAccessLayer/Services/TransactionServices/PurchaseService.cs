@@ -106,7 +106,9 @@ namespace WebShopLibrary.BusinessAccessLayer.Services.TransactionServices
                 {
                     Id = purchase.Product.Id,
                     Name = purchase.Product.Name,
-                    Description = purchase.Product.Description
+                    Price = purchase.Product.Price,
+                    Description = purchase.Product.Description,
+                    Stock = purchase.Product.Stock
                 };
 
                 purRes.User = new PurchaseUserResponse
