@@ -22,7 +22,7 @@
 </div>
 <br>
 <ul *ngIf="users.length > 0">
-    <div *ngFor="let user of users">
+    <div class="infoCard" *ngFor="let user of users">
         <button (click)="edit(user)">Edit</button>
         <button (click)="delete(user)">Delete</button>
         <li>Username: {{user.username}} - Password: {{user.password}}, Email: {{user.email}} - Usertype:

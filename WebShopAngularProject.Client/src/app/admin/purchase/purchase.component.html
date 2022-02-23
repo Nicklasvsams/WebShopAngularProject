@@ -18,7 +18,7 @@
 </div>
 <br>
 <ul *ngIf="purchases.length > 0">
-    <div *ngFor="let purchase of purchases">
+    <div class="infoCard" *ngFor="let purchase of purchases">
         <button (click)="edit(purchase)">Edit</button>
         <button (click)="delete(purchase)">Delete</button>
         Purchase ID: {{purchase.id}} - Purchase Date: {{purchase.purchaseDate}} <br>
@@ -42,6 +42,5 @@
             <li>{{ purchase.product.description }}</li>
             <li>{{ purchase.product.stock }}</li>
         </ul>
-        <br>
     </div>
 </ul>

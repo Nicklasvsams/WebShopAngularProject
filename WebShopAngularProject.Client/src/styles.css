@@ -7,3 +7,8 @@
 li{
     list-style: none;
 }
+
+.infoCard{
+    border: solid 1px;
+    margin: 10px;
+}
