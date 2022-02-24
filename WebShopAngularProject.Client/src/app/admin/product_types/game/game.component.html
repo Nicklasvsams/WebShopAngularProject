@@ -1,1 +1,63 @@
-<p>game works!</p>
+<h1>Game administration</h1>
+
+<div>
+    <div>
+        <label>Publisher</label>
+        <input [(ngModel)]="game.publisher">
+    </div>
+    <div>
+        <label>Published year</label>
+        <input [(ngModel)]="game.publishedYear" type="number">
+    </div>
+    <div>
+        <label>Language</label>
+        <input [(ngModel)]="game.language">
+    </div>
+    <div>
+        <label>Genre</label>
+        <input [(ngModel)]="game.genre">
+    </div>
+    <div>
+        <label>Product ID</label>
+        <input [(ngModel)]="game.productId" type="number">
+    </div>
+    <div>
+        <label>Category ID</label>
+        <input [(ngModel)]="game.categoryId" type="number">
+    </div>
+    <button (click)="save()">Save</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+<br>
+<ul *ngIf="games.length > 0">
+    <div class="infoCard" *ngFor="let game of games">
+        <button (click)="edit(game)">Edit</button>
+        <button (click)="delete(game)">Delete</button>
+        <ul>
+            <li>Game ID: {{game.id}}</li>
+            <li>Publisher: {{game.publisher}}</li>
+            <li>Published year: {{game.publishedYear}}</li>
+            <li>Language: {{game.language}}</li>
+            <li>Genre: {{game.genre}}</li>
+        </ul>
+
+        <ul *ngIf="game.product != null">
+            <li>
+                <h4>Product info:</h4>
+            </li>
+            <li>ID: {{ game.product.id }}</li>
+            <li>Name: {{ game.product.name }}</li>
+            <li>Price: {{ game.product.price }}</li>
+            <li>Description: {{ game.product.description }}</li>
+            <li>Stock: {{ game.product.stock }}</li>
+        </ul>
+        <ul *ngIf="game.category != null">
+            <li>
+                <h4>Category:</h4>
+            </li>
+            <li>ID: {{ game.category.id }}</li>
+            <li>{{ game.category.name }}</li>
+            <li>{{ game.category.description }}</li>
+        </ul>
+    </div>
+</ul>

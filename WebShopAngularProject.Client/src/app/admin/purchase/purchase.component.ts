@@ -9,9 +9,9 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./purchase.component.css']
 })
 export class PurchaseComponent implements OnInit {
-  purchases: Purchase[] = [];
 
   purchase: Purchase = { id: 0, purchaseDate: new Date(), userId: 0, productId: 0 }
+  purchases: Purchase[] = [];
 
   constructor(private purchaseService: PurchaseService, private userService: UserService) { }
 
