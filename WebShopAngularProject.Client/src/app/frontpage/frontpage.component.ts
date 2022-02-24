@@ -16,5 +16,4 @@ export class FrontpageComponent implements OnInit {
     this.userService.getAllUsers()
       .subscribe(x => this.users = x);
   }
-
 }
