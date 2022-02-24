@@ -35,9 +35,9 @@ li{
 .main{
     margin: auto;
     border-radius: 5px;
-    border: 3px;
-    border-style:solid;
     width: 75%;
+    background-color: white;
+    margin-top: 1%;
 }
 
 .dataForms{
@@ -66,7 +66,7 @@ input, label, select {
     border-radius: 3px;
 }
 
-button{
+ul>button, div.infoCard>button{
     padding:5px 0 5px 0;
     margin: 5px 0px;
     font-size: 75%;
@@ -74,4 +74,24 @@ button{
     font-weight:600;
     width: 50%;
     text-align: center;
+}
+
+ul>button:hover, div.infoCard>button:hover{
+    cursor: pointer;
+    background-color: grey;
+}
+
+nav{
+    border-bottom: 1px solid;
+    background-color: grey;
+}
+
+footer{
+    position:fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+    border-top: 1px solid;
 }

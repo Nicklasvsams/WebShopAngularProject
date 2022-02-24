@@ -31,8 +31,8 @@
     <ul class="content" *ngIf="purchases.length > 0">
         <div class="infoCard" *ngFor="let purchase of purchases">
             <ul *ngIf="purchase.user != null && purchase.product != null">
-                <li><b>Purchase ID:</b>{{purchase.id}}</li>
-                <li><b>Purchase Date:</b>{{purchase.purchaseDate | date}}</li>
+                <li><b>Purchase ID: </b>{{purchase.id}}</li>
+                <li><b>Purchase Date: </b>{{purchase.purchaseDate | date}}</li>
                 <li><b>User ID: </b>{{ purchase.user.id }}</li>
                 <li><b>Username: </b>{{ purchase.user.username }}</li>
                 <li><b>Password: </b>{{ purchase.user.password }}</li>

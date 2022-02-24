@@ -1,9 +1,17 @@
 <nav>
   <a routerLink="/">Home</a>
-  <a routerLink="/admin/user">Users</a>
-  <a routerLink="/admin/purchase">Purchases</a>
-  <a routerLink="/admin/product">Products</a>
-  <a routerLink="/admin/category">Categories</a>
-  <a routerLink="/admin/game">Games</a>
+  <div class="dropdown">
+    <button (click)="dropDownNav()" id="dropbtn">Admin</button>
+    <div id="mydropdown" class="dropdown-content">
+      <a routerLink="/admin/user">Users</a>
+      <a routerLink="/admin/purchase">Purchases</a>
+      <a routerLink="/admin/product">Products</a>
+      <a routerLink="/admin/category">Categories</a>
+      <a routerLink="/admin/game">Games</a>
+    </div>
+  </div>
 </nav>
 <router-outlet></router-outlet>
+<footer>
+  Web Shop Angular Project - Nicklas V Sams
+</footer>
