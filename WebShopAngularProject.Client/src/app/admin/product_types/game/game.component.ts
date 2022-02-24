@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/_models/category';
+import { Product } from 'src/app/_models/product';
 import { Game } from 'src/app/_models/product_types/game';
+import { CategoryService } from 'src/app/_services/category.service';
+import { ProductService } from 'src/app/_services/product.service';
 import { GameService } from 'src/app/_services/product_types/game.service';
 
 @Component({
@@ -11,14 +15,36 @@ export class GameComponent implements OnInit {
 
   game: Game = { id: 0, publisher: '', publishedYear: 0, language: '', genre: '', productId: 0, categoryId: 0 }
   games: Game[] = [];
+  products: Product[] = [];
+  categories: Category[] = [];
 
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, private productService: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.gameService.getAllGames()
       .subscribe({
         next: (x) => {
           this.games = x;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+
+    this.productService.getAllProducts()
+      .subscribe({
+        next: (x) => {
+          this.products = x;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+
+    this.categoryService.getAllCategories()
+      .subscribe({
+        next: (x) => {
+          this.categories = x;
         },
         error: (err) => {
           console.log(err);
@@ -32,7 +58,10 @@ export class GameComponent implements OnInit {
         this.gameService.createGame(this.game)
           .subscribe({
             next: (x) => {
+              x.category = this.categories.find(y => y.id == x.categoryId);
+              x.product = this.products.find(y => y.id == x.productId);
               console.log(x);
+
               this.games.push(x);
               this.game = this.resetGame();
             },

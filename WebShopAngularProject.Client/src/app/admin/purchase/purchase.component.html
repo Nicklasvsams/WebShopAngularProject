@@ -2,16 +2,26 @@
 
 <div>
     <div>
+        <label>User</label>
+        <select [(ngModel)]="purchase.userId" type="number">
+            <option disabled>Choose user</option>
+            <option *ngFor="let user of users" [ngValue]='user.id'>
+                {{ user.username }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Product</label>
+        <select [(ngModel)]="purchase.productId" type="number">
+            <option disabled>Choose product</option>
+            <option *ngFor="let product of products" [ngValue]='product.id'>
+                {{ product.name }}
+            </option>
+        </select>
+    </div>
+    <div>
         <label>Purchase date</label>
         <input [(ngModel)]="purchase.purchaseDate" type="date">
-    </div>
-    <div>
-        <label>User ID</label>
-        <input [(ngModel)]="purchase.userId" type="number">
-    </div>
-    <div>
-        <label>Product ID</label>
-        <input [(ngModel)]="purchase.productId" type="number">
     </div>
     <button (click)="save()">Save</button>
     <button (click)="cancel()">Cancel</button>
@@ -36,11 +46,11 @@
             <li>
                 <h4>Product:</h4>
             </li>
-            <li>{{ purchase.product.id }}</li>
-            <li>{{ purchase.product.name }}</li>
-            <li>{{ purchase.product.price }}</li>
-            <li>{{ purchase.product.description }}</li>
-            <li>{{ purchase.product.stock }}</li>
+            <li>ID: {{ purchase.product.id }}</li>
+            <li>Name: {{ purchase.product.name }}</li>
+            <li>Price: {{ purchase.product.price }}</li>
+            <li>Description: {{ purchase.product.description }}</li>
+            <li>Stock: {{ purchase.product.stock }}</li>
         </ul>
     </div>
 </ul>
