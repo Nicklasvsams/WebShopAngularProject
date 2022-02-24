@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/_models/product';
 import { Purchase } from 'src/app/_models/purchase';
+import { User } from 'src/app/_models/user';
+import { ProductService } from 'src/app/_services/product.service';
 import { PurchaseService } from 'src/app/_services/purchase.service';
 import { UserService } from 'src/app/_services/user.service';
 
@@ -9,11 +12,13 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./purchase.component.css']
 })
 export class PurchaseComponent implements OnInit {
-  purchases: Purchase[] = [];
 
   purchase: Purchase = { id: 0, purchaseDate: new Date(), userId: 0, productId: 0 }
+  purchases: Purchase[] = [];
+  products: Product[] = [];
+  users: User[] = [];
 
-  constructor(private purchaseService: PurchaseService, private userService: UserService) { }
+  constructor(private purchaseService: PurchaseService, private userService: UserService, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.purchaseService.getAllPurchases()
@@ -26,6 +31,25 @@ export class PurchaseComponent implements OnInit {
         }
       });
 
+    this.productService.getAllProducts()
+      .subscribe({
+        next: (x) => {
+          this.products = x;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+
+    this.userService.getAllUsers()
+      .subscribe({
+        next: (x) => {
+          this.users = x;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
   }
 
   save(): void {
@@ -34,6 +58,8 @@ export class PurchaseComponent implements OnInit {
         this.purchaseService.createPurchase(this.purchase)
           .subscribe({
             next: (x) => {
+              x.product = this.products.find(y => y.id == x.productId);
+              x.user = this.users.find(y => y.id == x.userId);
               this.purchases.push(x);
               this.purchase = this.resetPurchase();
             },

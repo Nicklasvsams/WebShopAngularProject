@@ -1,1 +1,67 @@
-<p>game works!</p>
+<div class="main">
+    <h1>Game administration</h1>
+    <div class="dataForms">
+        <ul>
+            <li>
+                <label><b>Product</b></label>
+                <select [(ngModel)]="game.productId" type="number">
+                    <option disabled>Choose product</option>
+                    <option *ngFor="let product of products" [ngValue]='product.id'>
+                        {{ product.name }}
+                    </option>
+                </select>
+            </li>
+            <li>
+                <label><b>Category</b></label>
+                <select [(ngModel)]="game.categoryId" type="number">
+                    <option disabled>Choose category</option>
+                    <option *ngFor="let category of categories" [ngValue]='category.id'>
+                        {{ category.name }}
+                    </option>
+                </select>
+            </li>
+            <li>
+                <label><b>Publisher</b></label>
+                <input [(ngModel)]="game.publisher">
+            </li>
+            <li>
+                <label><b>Published year</b></label>
+                <input [(ngModel)]="game.publishedYear" type="number">
+            </li>
+            <li>
+                <label><b>Language</b></label>
+                <input [(ngModel)]="game.language">
+            </li>
+            <li>
+                <label><b>Genre</b></label>
+                <input [(ngModel)]="game.genre">
+            </li>
+            <button (click)="save()">Save</button>
+            <button (click)="cancel()">Cancel</button>
+        </ul>
+    </div>
+    <ul class="content" *ngIf="games.length > 0">
+        <div class="infoCard" *ngFor="let game of games">
+            <ul *ngIf="game.product != null && game.category != null">
+                <li>
+                    <h3>Product info:</h3>
+                </li>
+                <li><b>ID:</b> {{ game.product.id }}</li>
+                <li><b>Name:</b> {{ game.product.name }}</li>
+                <li><b>Price:</b> {{ game.product.price }}</li>
+                <li><b>Description:</b> {{ game.product.description }}</li>
+                <li><b>Stock:</b> {{ game.product.stock }}</li>
+                <li><b>Game ID:</b> {{game.id}}</li>
+                <li><b>Publisher:</b> {{game.publisher}}</li>
+                <li><b>Published year:</b> {{game.publishedYear}}</li>
+                <li><b>Language:</b> {{game.language}}</li>
+                <li><b>Genre:</b> {{game.genre}}</li>
+                <li><b>Category ID:</b> {{ game.category.id }}</li>
+                <li><b>Category name:</b> {{ game.category.name }}</li>
+                <li><b>Category description:</b> {{ game.category.description }}</li>
+            </ul>
+            <button (click)="edit(game)">Edit</button>
+            <button (click)="delete(game)">Delete</button>
+        </div>
+    </ul>
+</div>
