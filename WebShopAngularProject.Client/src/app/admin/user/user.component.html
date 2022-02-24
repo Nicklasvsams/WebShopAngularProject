@@ -1,31 +1,37 @@
-<h1>User administration</h1>
-
-<div>
-    <div>
-        <label>Username</label>
-        <input [(ngModel)]="user.username">
+<div class="main">
+    <h1>User administration</h1>
+    <div class="dataForms">
+        <ul>
+            <li>
+                <label><b>Username</b></label>
+                <input [(ngModel)]="user.username">
+            </li>
+            <li>
+                <label><b>Password</b></label>
+                <input [(ngModel)]="user.password">
+            </li>
+            <li>
+                <label><b>Email</b></label>
+                <input [(ngModel)]="user.email">
+            </li>
+            <li>
+                <label><b>User Type</b></label>
+                <input [(ngModel)]="user.userType">
+            </li>
+            <button (click)="save()">Save</button>
+            <button (click)="cancel()">Cancel</button>
+        </ul>
     </div>
-    <div>
-        <label>Password</label>
-        <input [(ngModel)]="user.password">
-    </div>
-    <div>
-        <label>Email</label>
-        <input [(ngModel)]="user.email">
-    </div>
-    <div>
-        <label>User Type</label>
-        <input [(ngModel)]="user.userType">
-    </div>
-    <button (click)="save()">Save</button>
-    <button (click)="cancel()">Cancel</button>
+    <ul class="content" *ngIf="users.length > 0">
+        <div class="infoCard" *ngFor="let user of users">
+            <ul>
+                <li><b>Username:</b> {{user.username}}</li>
+                <li><b>Password:</b> {{user.password}}</li>
+                <li><b>Email:</b> {{user.email}}</li>
+                <li><b>Usertype:</b> {{user.userType}}</li>
+            </ul>
+            <button (click)="edit(user)">Edit</button>
+            <button (click)="delete(user)">Delete</button>
+        </div>
+    </ul>
 </div>
-<br>
-<ul *ngIf="users.length > 0">
-    <div class="infoCard" *ngFor="let user of users">
-        <button (click)="edit(user)">Edit</button>
-        <button (click)="delete(user)">Delete</button>
-        <li>Username: {{user.username}} - Password: {{user.password}}, Email: {{user.email}} - Usertype:
-            {{user.userType}}</li>
-    </div>
-</ul>

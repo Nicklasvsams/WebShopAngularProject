@@ -1,56 +1,51 @@
-<h1>Purchase administration</h1>
-
-<div>
-    <div>
-        <label>User</label>
-        <select [(ngModel)]="purchase.userId" type="number">
-            <option disabled>Choose user</option>
-            <option *ngFor="let user of users" [ngValue]='user.id'>
-                {{ user.username }}
-            </option>
-        </select>
+<div class="main">
+    <h1>Purchase administration</h1>
+    <div class="dataForms">
+        <ul>
+            <li>
+                <label><b>User</b></label>
+                <select [(ngModel)]="purchase.userId" type="number">
+                    <option disabled>Choose user</option>
+                    <option *ngFor="let user of users" [ngValue]='user.id'>
+                        {{ user.username }}
+                    </option>
+                </select>
+            </li>
+            <li>
+                <label><b>Product</b></label>
+                <select [(ngModel)]="purchase.productId" type="number">
+                    <option disabled>Choose product</option>
+                    <option *ngFor="let product of products" [ngValue]='product.id'>
+                        {{ product.name }}
+                    </option>
+                </select>
+            </li>
+            <li>
+                <label><b>Purchase date</b></label>
+                <input [(ngModel)]="purchase.purchaseDate" type="date">
+            </li>
+            <button (click)="save()">Save</button>
+            <button (click)="cancel()">Cancel</button>
+        </ul>
     </div>
-    <div>
-        <label>Product</label>
-        <select [(ngModel)]="purchase.productId" type="number">
-            <option disabled>Choose product</option>
-            <option *ngFor="let product of products" [ngValue]='product.id'>
-                {{ product.name }}
-            </option>
-        </select>
-    </div>
-    <div>
-        <label>Purchase date</label>
-        <input [(ngModel)]="purchase.purchaseDate" type="date">
-    </div>
-    <button (click)="save()">Save</button>
-    <button (click)="cancel()">Cancel</button>
+    <ul class="content" *ngIf="purchases.length > 0">
+        <div class="infoCard" *ngFor="let purchase of purchases">
+            <ul *ngIf="purchase.user != null && purchase.product != null">
+                <li><b>Purchase ID:</b>{{purchase.id}}</li>
+                <li><b>Purchase Date:</b>{{purchase.purchaseDate | date}}</li>
+                <li><b>User ID: </b>{{ purchase.user.id }}</li>
+                <li><b>Username: </b>{{ purchase.user.username }}</li>
+                <li><b>Password: </b>{{ purchase.user.password }}</li>
+                <li><b>Email: </b>{{ purchase.user.email }}</li>
+                <li><b>User Type: </b>{{ purchase.user.userType }}</li>
+                <li><b>Product ID: </b>{{ purchase.product.id }}</li>
+                <li><b>Product name: </b>{{ purchase.product.name }}</li>
+                <li><b>Price: </b>{{ purchase.product.price }}</li>
+                <li><b>Product description: </b>{{ purchase.product.description }}</li>
+                <li><b>Stock: </b>{{ purchase.product.stock }}</li>
+            </ul>
+            <button (click)="edit(purchase)">Edit</button>
+            <button (click)="delete(purchase)">Delete</button>
+        </div>
+    </ul>
 </div>
-<br>
-<ul *ngIf="purchases.length > 0">
-    <div class="infoCard" *ngFor="let purchase of purchases">
-        <button (click)="edit(purchase)">Edit</button>
-        <button (click)="delete(purchase)">Delete</button>
-        Purchase ID: {{purchase.id}} - Purchase Date: {{purchase.purchaseDate | date}} <br>
-        <ul *ngIf="purchase.user != null">
-            <li>
-                <h4>User:</h4>
-            </li>
-            <li>Id: {{ purchase.user.id }}</li>
-            <li>Username: {{ purchase.user.username }}</li>
-            <li>Password: {{ purchase.user.password }}</li>
-            <li>Email: {{ purchase.user.email }}</li>
-            <li>User Type: {{ purchase.user.userType }}</li>
-        </ul>
-        <ul *ngIf="purchase.product != null">
-            <li>
-                <h4>Product:</h4>
-            </li>
-            <li>ID: {{ purchase.product.id }}</li>
-            <li>Name: {{ purchase.product.name }}</li>
-            <li>Price: {{ purchase.product.price }}</li>
-            <li>Description: {{ purchase.product.description }}</li>
-            <li>Stock: {{ purchase.product.stock }}</li>
-        </ul>
-    </div>
-</ul>
