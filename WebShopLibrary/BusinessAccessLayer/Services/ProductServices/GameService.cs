@@ -91,7 +91,9 @@ namespace BusinessAccessLayer.Services.GameServices
                 Publisher = game.Publisher,
                 PublishedYear = game.PublishedYear,
                 Language = game.Language,
-                Genre = game.Genre
+                Genre = game.Genre,
+                CategoryId = game.CategoryId,
+                ProductId = game.ProductId
             };
 
             if (game.Product != null && game.Publisher != null)
