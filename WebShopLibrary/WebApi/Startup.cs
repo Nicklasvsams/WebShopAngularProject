@@ -56,6 +56,9 @@ namespace WebApi
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
 
+            services.AddScoped<IMonitorRepository, MonitorRepository>();
+            services.AddScoped<IMonitorService, MonitorService>();
+
             services.AddDbContext<WebShopDBContext>(
                 x => x.UseSqlServer(Configuration.GetConnectionString("Default")));
 

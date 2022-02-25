@@ -25,7 +25,7 @@ nav>a:visited{
 
 /* Dropdown Button */
 #dropbtn {
-    background-color: #333232;
+    background-color: inherit;
     padding: 16px;
     font-size: 16px;
     border: none;
