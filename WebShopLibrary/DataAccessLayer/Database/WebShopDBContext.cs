@@ -2,6 +2,7 @@
 using System;
 using WebShopLibrary.DataAccessLayer.Database.Entities.Products;
 using WebShopLibrary.DataAccessLayer.Database.Entities.Products.Games;
+using WebShopLibrary.DataAccessLayer.Database.Entities.Products.Monitors;
 using WebShopLibrary.DataAccessLayer.Database.Entities.Transactions;
 using WebShopLibrary.DataAccessLayer.Database.Entities.Users;
 
@@ -18,6 +19,7 @@ namespace WebShopLibrary.DataAccessLayer.Database
         public DbSet<Product> Product { get; set; }
         public DbSet<Purchase> Purchase { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Monitor> Monitor { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -113,6 +115,18 @@ namespace WebShopLibrary.DataAccessLayer.Database
                     ProductId = 2,
                     UserId = 2
                 });
+
+            modelBuilder.Entity<Monitor>().HasData(
+                new Monitor
+                {
+                    Id = 1,
+                    Brand = "Sony",
+                    ReleaseYear = 2017,
+                    Size = 15,
+                    CategoryId = 3,
+                    ProductId = 1
+                }
+                );
         }
     }
 }
