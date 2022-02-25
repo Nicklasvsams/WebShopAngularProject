@@ -230,8 +230,30 @@ namespace WebShopLibrary.Tests.Repositories
             var result = await _monitorRepository.UpdateExistingMonitor(monitorId, monitorUpdate);
 
             // Assert
+
             Assert.NotNull(result);
             Assert.IsType<Monitor>(result);
+            Assert.Equal(monitorId, result.Id);
+            Assert.Equal("TestBrand2", result.Brand);
+            Assert.Equal(1992, result.ReleaseYear);
+            Assert.Equal(44, result.Size);
+            Assert.Equal(2, result.CategoryId);
+            Assert.Equal(2, result.ProductId);
+        }
+
+        [Fact]
+        public async void UpdateExistingMonitor_ShouldReturnNull_WhenMonitorToUpdateDoesNotExist()
+        {
+            // Arrange
+            int monitorId = 1;
+
+            await _context.Database.EnsureDeletedAsync();
+
+            // Act
+            var result = await _monitorRepository.UpdateExistingMonitor(monitorId, Monitor());
+
+            // Assert
+            Assert.Null(result);
         }
 
         private List<Monitor> MonitorList()
